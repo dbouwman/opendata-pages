@@ -30,43 +30,48 @@ export default Ember.Service.extend({
 
   create(page){
     let data = {
-      "source": "OPENDATAPAGESBUWHAHAHAH",
-      "folderId": null,
-      "values": page
+      'source': 'OPENDATAPAGESBUWHAHAHAH',
+      'folderId': null,
+      'values': page
     };
     let item = {
       'title':page.title,
       'owner':page.owner,
       'type':'Web Mapping Application',
       'typeKeywords': [
-        'JavaScript',
+        'Web Map',
         'Map',
         'Mapping Site',
         'Online Map',
-        'Ready To Use',
+        'JavaScript',
         'selfConfigured',
-        'Web Map'
+        'Code Sample'
       ],
       'tags':['odpage'],
-      'text': JSON.stringify(data).replace('&', ' ')
+      'text': JSON.stringify(data)
     };
 
-    return this.get('itemsService').create(item);
+    return this.get('itemsService').create(item)
+      .then((resp)=>{
+        //get the id an update the url
+        item.id = resp.id;
+        item.url = 'https://dbouwman.github.io/opendata-pages/#/pages/' + resp.id;
+        return this.get('itemsService').update(item);
+      });
   },
 
   update(page){
     let data = {
-      "source": "OPENDATAPAGESBUWHAHAHAH",
-      "folderId": null,
-      "values": page
+      'source': 'OPENDATAPAGESBUWHAHAHAH',
+      'folderId': null,
+      'values': page
     };
     let item = {
       'id':page.id,
       'title':page.title,
       'description':page.description,
       'owner':page.owner,
-      'text': JSON.stringify(data).replace(/&/g, ' ')
-
+      'text': JSON.stringify(data)
     };
     return this.get('itemsService').update(item);
   },

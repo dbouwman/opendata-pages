@@ -8,7 +8,7 @@ export default Ember.Route.extend({
     // NOTE: we used to (and i'd prefer to) do this in an instance initializer
     // but that stopped working at rc.7 of ember-intl
     const intl = this.get('intl');
-    
+
     let defaultLocale = 'en-us';
     let translationKey = this._calculateTranslationKey(defaultLocale);
 
@@ -144,7 +144,7 @@ export default Ember.Route.extend({
         window.location = this.get('session.signoutUrl');
       }else{
         this.get('session').close();
-        //this.transitionTo('index');
+        this.transitionTo('index');
       }
     }
   }

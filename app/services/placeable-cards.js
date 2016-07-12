@@ -2,7 +2,7 @@
  * placeable-cards.js
  */
  import Ember from 'ember';
-import getDefaultSection from 'opendata-pages/utils/get-default-section';
+ import getDefaultSection from 'opendata-pages/utils/get-default-section';
  export default Ember.Service.extend({
    getPageCards(){
      return [

@@ -43,6 +43,7 @@ module.exports = function (defaults) {
       fingerprintOptions.prepend = 'http://open-data-qa-assets.s3-website-us-east-1.amazonaws.com/'; // use fingerprinting to prepend your ember server domain path
       break;
     case 'production':
+      vendorOptions = {};
       fingerprintOptions.prepend = 'http://open-data-prod-assets.s3-website-us-east-1.amazonaws.com/'; // use fingerprinting to prepend your ember server domain path
       break;
   }

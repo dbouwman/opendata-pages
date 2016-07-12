@@ -6,7 +6,7 @@ module.exports = function(environment) {
     environment: environment,
     rootURL: '/', // base for routing
     baseURL: '',
-    locationType: 'auto',
+    locationType: 'hash',
 
     contentSecurityPolicy: {
       'default-src': "'none'",
