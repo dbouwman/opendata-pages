@@ -67,7 +67,7 @@ module.exports = function (defaults) {
       sourceMap: !isProductionLikeBuild,
     },
 
-    fingerprint: fingerprintOptions,
+    fingerprint: false,
     sourcemaps: { enabled: !isProductionLikeBuild },
     minifyCSS: { enabled: isProductionLikeBuild, options: { processImportFrom: ['local'] } },
     minifyJS: { enabled: isProductionLikeBuild },
