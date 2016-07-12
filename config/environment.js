@@ -70,7 +70,7 @@ module.exports = function(environment) {
   }
 
   if (environment === 'production') {
-
+    ENV.baseURL = '/opendata-pages/';
   }
 
   return ENV;
