@@ -44,7 +44,7 @@ module.exports = function (defaults) {
       break;
     case 'production':
       vendorOptions = {};
-      fingerprintOptions.prepend = 'http://open-data-prod-assets.s3-website-us-east-1.amazonaws.com/'; // use fingerprinting to prepend your ember server domain path
+      fingerprintOptions.prepend = 'opendata-pages/'; // use fingerprinting to prepend your ember server domain path
       break;
   }
 
@@ -68,7 +68,7 @@ module.exports = function (defaults) {
       sourceMap: !isProductionLikeBuild,
     },
 
-    fingerprint: false,
+    fingerprint: isProductionLikeBuild,
     sourcemaps: { enabled: !isProductionLikeBuild },
     minifyCSS: { enabled: isProductionLikeBuild, options: { processImportFrom: ['local'] } },
     minifyJS: { enabled: isProductionLikeBuild },
