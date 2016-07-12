@@ -9,7 +9,7 @@
     "assets/intl/intl.js": "assets/intl/intl-18cf50548741aaf113e14a79a04f215f.js",
     "assets/intl/intl.min.js": "assets/intl/intl.min-d1098a90037bf4cc6881e00146e3f4fe.js",
     "assets/intl/locales/en-us.js": "assets/intl/locales/en-us-a53ee708f8f05d570a3095cbc9cec948.js",
-    "assets/opendata-pages.js": "assets/opendata-pages-b914c20715bd0694653d95db32c67903.js",
+    "assets/opendata-pages.js": "assets/opendata-pages-8cb41f131ef3f180d838a03e8f4e1ccb.js",
     "assets/opendata.css": "assets/opendata-dc0edc3ffaea3c100945d14b9bff77b7.css",
     "assets/vendor.css": "assets/vendor-21ec314c28e933d8bb14d40f486ede48.css",
     "assets/vendor.js": "assets/vendor-1475f5f321df4d8f063aa796da8e7a96.js",
@@ -46,5 +46,5 @@
     "img/bootstrap-colorpicker/hue.png": "img/bootstrap-colorpicker/hue-e75b2a9cae62d4c2951a9fea86e8fac4.png",
     "img/bootstrap-colorpicker/saturation.png": "img/bootstrap-colorpicker/saturation-668d0a0e7a0189f62898bcc57ab8370c.png"
   },
-  "prepend": "opendata-pages/"
+  "prepend": ""
 }
