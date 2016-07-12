@@ -29,22 +29,9 @@ module.exports = function (defaults) {
       console.log('Including jQuery in vendor.js for dev/test');
       vendorOptions = {};
       break;
-    case 'integration':
-      break;
-    case 'devext':
-      fingerprintOptions.prepend = 'http://dev-od-umbrella-assets.s3-website-us-east-1.amazonaws.com/'; // use fingerprinting to prepend your ember server domain path
-      // fingerprintOptions.prepend = 'http://dkgmy410p391h.cloudfront.net/';
-      break;
-    case 'demo':
-      var config = require('./config/environments/' + env);
-      fingerprintOptions.prepend = config.deployConfig.fingerprintPrepend;// 'http://demo-od-umbrella-assets.s3-website-us-east-1.amazonaws.com/'; // use fingerprinting to prepend your ember server domain path
-      break;
-    case 'qaext':
-      fingerprintOptions.prepend = 'http://open-data-qa-assets.s3-website-us-east-1.amazonaws.com/'; // use fingerprinting to prepend your ember server domain path
-      break;
     case 'production':
       vendorOptions = {};
-      fingerprintOptions.prepend = 'opendata-pages/'; // use fingerprinting to prepend your ember server domain path
+      fingerprintOptions.prepend = ''; // use fingerprinting to prepend your ember server domain path
       break;
   }
 
@@ -68,7 +55,7 @@ module.exports = function (defaults) {
       sourceMap: !isProductionLikeBuild,
     },
 
-    fingerprint: isProductionLikeBuild,
+    fingerprint: fingerprintOptions,
     sourcemaps: { enabled: !isProductionLikeBuild },
     minifyCSS: { enabled: isProductionLikeBuild, options: { processImportFrom: ['local'] } },
     minifyJS: { enabled: isProductionLikeBuild },
