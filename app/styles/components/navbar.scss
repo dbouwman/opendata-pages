@@ -1,0 +1,43 @@
+//== Page: All
+//== Component: Navbar
+//== Description: Styling for Navbar
+
+.navbar-default {
+  background-color: $navbar-default-bg;
+  a {
+  	color: $navbar-default-link-color;
+   	&:hover,
+   	&:focus {
+   		color: $navbar-default-link-color;
+   		background-color: $navbar-default-link-hover-bg;
+   		padding-bottom: $navbar-link-btm-padding;
+   		border: $navbar-link-btm-border;
+   	}
+   	&:active {
+   		background-color: $navbar-default-link-active-bg;
+   		padding-bottom: $navbar-link-btm-padding;
+   		border: $navbar-link-btm-border;
+   	}
+  }
+  .navbar-brand {
+  	color: $navbar-default-brand-color;
+  }
+
+  .navbar-nav {
+    font-size: floor(($font-size-base * 1.1));
+
+    > li > a:hover,
+    > li > a:focus {
+      background-image: linear-gradient(to top, transparent 92%, $link-color 93%, $link-color 100%);
+      color: $navbar-default-link-color;
+    }
+  }
+  .navbar-logo {
+    //width: 50px;
+    height: 50px;
+    padding: 5px 10px 5px 0px;
+    @media (max-width: 768px) {
+      padding-left: 15px;
+    }
+  }
+}

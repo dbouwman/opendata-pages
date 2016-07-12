@@ -1,0 +1,152 @@
+.page-mundi {
+  #main-region {
+    margin-bottom:0px;
+  }
+  #mundi-map-container {
+    height:100%;
+    .esriMapContainer, .esri-map-component {
+      height:100% !important;
+    }
+  }
+  #mundi-container {
+    height:100%;
+    &.NYT {
+      img {
+        filter: brightness(110%);
+        -webkit-filter: brightness(110%);
+      }
+    }
+  }
+  .esri-map-component {
+    height:100%;
+  }
+  .header {
+    border-bottom: lighten($brand-primary, 15%);
+    background: $brand-primary url("images/mundi-header.png") no-repeat;
+    padding-top:20px;
+    padding-bottom:10px;
+    h1 {
+      padding:0px;
+      margin:0px;
+      a {
+        color: $btn-primary-color;
+      }
+      small {
+        color: $btn-primary-color;
+        font-style: italic;
+      }
+    }
+  }
+  #dropdownMenu1 {
+    width: 100%;
+  }
+  .dropdown-menu {
+    height: 400px;
+    overflow: hidden;
+    overflow-y: auto;
+  }
+  .mundi-share-icon {
+    float:left;
+    margin-right: 5px;
+    margin-top:3px;
+    img {
+      height:25px;
+    }
+  }
+  #mundi-map {
+    height:100%;
+    width:100%;
+    position: relative;
+  }
+  .mundi-toolbar {
+    background-color: $form-bg;
+    border-bottom: 1px solid $midrange-border-color;
+    min-height: 65px;
+  }
+  #mundi-toolbar-bottom {
+    width:100%;
+    height: auto;
+    min-height: 36px;
+    background: $form-bg;
+    padding-top:4px;
+  }
+  #mundi-toolbar-top {
+    width:100%;
+    overflow: hidden;
+    background-color: darken($link-color, 10%);
+    padding-top: 3px;
+    padding-bottom: 1px;
+    color: $toolbar-bg;
+    .mundi-step-title {
+      cursor: pointer;
+      &.selected {
+        border-bottom:2px solid $body-bg;
+      }
+    }
+    .active {
+      color: $btn-primary-color
+    }
+  }
+  #mundi-toolbar-bottom select {
+    width: 100%;
+    margin-top: 5px;
+  }
+  #mundi-filter-slider {
+    margin-top:6px;
+    margin-bottom:8px;
+  }
+  .tool {
+    float:right;
+    margin: 3px;
+    padding:2px;
+    padding-left:5px;
+    padding-right:5px;
+    border:1px solid $midrange-border-color;
+    border-radius:2px;
+    cursor: pointer;
+    background: $panel-bg;
+    &:hover {
+      background: $form-bg;
+    }
+  }
+  #search-container {
+    display: none;
+    pointer-events: auto;
+    position: absolute;
+    margin: auto;
+    width: 400px;
+    height: 80%;
+    margin-top: 7px;
+    margin-left: 45px;
+    &.visible {
+      display: block;
+    }
+    #open-search {
+      background: $panel-bg !important;
+    }
+  }
+  #legend-container {
+    pointer-events: auto;
+    position: absolute;
+    margin: auto;
+    width: 400px;
+    bottom: 10px;
+    left: 10px;
+    &.visible {
+      display: block;
+    }
+  }
+  #open-search-header {
+    padding: 5px;
+    padding-left: 2%;
+    background: $form-bg;
+    text-transform: uppercase;
+    font-family: $font-family-sans-serif;
+    font-weight: 700;
+    font-size: 1rem;
+    line-height: 1rem;
+    pointer-events: auto;
+    color: rgba(172, 172, 172, 0.7);
+    text-shadow: 1px 1px 1px #EEE, 0 0 0 #EEE, 1px 2px 4px #EEE;
+  }
+}

@@ -1,0 +1,62 @@
+<div class="container">
+  <div class="row">
+		<div class="col-md-12">
+		  <div class="page-header">
+		    <h2>{{t 'pages.header' username=model.user.username}}
+          {{#link-to 'pages.new' class="btn btn-warning btn-lrg pull-right"}}{{t 'pages.create'}}{{/link-to}}
+		    </h2>
+		  </div>
+	  </div>
+  </div>
+
+  <div class="row">
+    <div class="col-sm-12">
+      <table class="table table-striped">
+        <thead>
+          <tr>
+            <th>{{t 'pages.list.headers.name'}}</th>
+            <th>{{t 'pages.list.headers.status'}}</th>
+            <th>{{t 'pages.list.headers.updated'}}</th>
+            <th></th>
+          </tr>
+        </thead>
+        <tbody>
+          {{#each model.pages as |page|}}
+            <tr>
+              <td ><span class="truncate-page-name">{{page.title}}</span></td>
+              <td>
+              {{#if page.public}}
+                {{t 'pages.list.values.public'}}
+              {{else}}
+                {{t 'pages.list.values.private'}}
+              {{/if}}
+              </td>
+              <td>{{page.updatedAt}}</td>
+              <td>
+                {{#if (eq model.user.username page.owner) }}
+                {{#link-to 'pages.page.edit' page.id class="btn btn-default btn-sm pull-right" data-toggle="tooltip" data-placement="top" title="Edit Page" arial-label="Edit Page"}}{{t 'shared.buttons.edit'}}{{/link-to}}
+                <button class="btn btn-default btn-sm  pull-right" {{action 'confirmDelete' page}}>{{t 'shared.buttons.delete'}}</button>
+                {{/if}}
+                {{#link-to 'pages.page.index' page.id class="btn btn-default btn-sm pull-right" data-toggle="tooltip" data-placement="top" title="View Page" arial-label="View Page"}}{{t 'shared.buttons.view'}}{{/link-to}}
+              </td>
+            </tr>
+          {{/each}}
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>
+
+
+
+{{#if showConfirmDelete}}
+  {{#od-modal modalId="confirmModal" modalTitle=(t 'pages.modals.delete.title')}}
+    <div class="modal-body">
+      <p>{{t 'pages.modals.delete.message'}}</p>
+    </div>
+    <div class="modal-footer">
+      <button type="button" class="btn btn-default" data-dismiss="modal" {{action "stayOnPage"}}>{{t 'pages.modals.delete.stay'}}</button>
+      <button type="button" class="btn btn-danger" data-dismiss="modal" {{action "onPageDelete" model}}>{{t 'pages.modals.delete.delete'}}</button>
+    </div>
+  {{/od-modal}}
+{{/if}}

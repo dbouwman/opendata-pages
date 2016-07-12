@@ -1,0 +1,16 @@
+#api-dropdown-list {
+  padding-top: 0px;
+  min-width: 240px;
+  font-weight: normal;
+  color: $brand-dark-gray;
+  li {
+  	padding: 5px;
+  }
+  input {
+    width:100%;
+    cursor: pointer;
+  }
+  input:hover {
+    outline: 1px solid $input-border-focus;
+  }
+}

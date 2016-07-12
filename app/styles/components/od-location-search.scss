@@ -1,0 +1,11 @@
+@import "-autocomplete-base";
+.twitter-typeahead {
+  .tt-menu {
+    top: 40px !important;
+  }
+  .tt-suggestion {
+    &.geolocate {
+      background-color: $row-hover-color;
+    }
+  }
+}

@@ -1,0 +1,47 @@
+
+
+// .card-debug {
+//   background-color:#DDDDDD;
+//   outline: 1px solid #CCC;
+// }
+
+.layout-editor {
+
+  .navbar-toggle {
+    float: left;
+    margin-left: 15px;
+    border-color: $navbar-default-toggle-border-color;
+    .icon-bar {
+      background-color: $navbar-default-toggle-icon-bar-bg;
+    }
+  }
+
+  .canvas {
+    position: relative;
+    left: 0;
+    // z-index: 2;
+    min-height: 100%;
+    padding: 50px 0 0 0;
+    background: #fff;
+  }
+
+  @media (min-width: 0) {
+    .style-panel-toggle {
+      display: block; /* force showing the toggle */
+    }
+  }
+
+  @media (min-width: 992px) {
+    body {
+      padding: 0;
+    }
+    .navbar {
+      //right: auto;
+      // background: none;
+      border: none;
+    }
+    .canvas {
+      padding: 0;
+    }
+  }
+}

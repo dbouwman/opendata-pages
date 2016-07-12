@@ -1,0 +1,153 @@
+//map controls
+$map-controls-bg-color: $panel-bg;
+$map-controls-text-color: $text-color;
+
+.esriSignInDialog {
+  display: none;
+}
+
+.esri-map-component {
+  .loader {
+    position: absolute;
+    z-index: 9;
+    width: 100%;
+    top: 200px;
+  }
+  // .map-controls-component {
+  //   position: relative;
+  //   top: 10px;
+  //   z-index: 115 !important;
+  //   box-sizing: border-box;
+  //   margin: 0 auto;
+  //   max-width: 1170px;
+  //   min-width: 0;
+  //   padding: 0 1em;
+  //   width: 100%;
+  //   height:30px;
+  //   padding-left:17px;
+  //   padding-right:5px;
+  //   border:none;
+  //   background:none;
+  //   pointer-events: none;
+  //   .map-button {
+  //     -webkit-transition: background-color .1s linear;
+  //     -moz-transition: background-color .1s linear;
+  //     -o-transition: background-color .1s linear;
+  //     transition: background-color .1s linear;
+  //     -webkit-transition: 0.1s ease;
+  //     -moz-transition: 0.1s ease;
+  //     -o-transition: 0.1s ease;
+  //     transition: 0.1s ease;
+  //     color: $map-controls-text-color;
+  //     width:30px;
+  //     height:34px;
+  //     line-height:34px;
+  //     text-align: center;
+  //     border:1px solid #C8C8C8;
+  //     background-color: $map-controls-bg-color;
+  //     pointer-events: auto;
+  //     &:hover {
+  //       background-color:#DDD;
+  //     }
+  //   }
+  // }
+  .esriSimpleSlider {
+    position: relative;
+    z-index: 39 !important; //was 115
+    box-sizing: border-box;
+    margin: 0 auto;
+    max-width: 2170px;
+    min-width: 0;
+    padding: 0 1em;
+    width: 100%;
+    height:30px;
+    padding-left:17px;
+    padding-right:5px;
+    border:none;
+    background:none;
+    pointer-events: none;
+    opacity: 0.8;
+    &.esriSimpleSliderTL {
+      left:0;
+    }
+    div {
+      position:absolute;
+    }
+    .esriSimpleSliderIncrementButton {
+      -webkit-transition: background-color .1s linear;
+      -moz-transition: background-color .1s linear;
+      -o-transition: background-color .1s linear;
+      transition: background-color .1s linear;
+      -webkit-transition: 0.1s ease;
+      -moz-transition: 0.1s ease;
+      -o-transition: 0.1s ease;
+      transition: 0.1s ease;
+      color: $table-color;
+      width:30px;
+      height:34px;
+      font-size:16px;
+      line-height:30px;
+      border:1px solid $midrange-border-color;
+      border-left:none;
+      background-color: $table-bg;
+      -webkit-border-radius: 0px;
+      border-radius: 0px;
+      left:47px;
+      float:left;
+      pointer-events: auto;
+      &:hover {
+        background-color: $table-bg;
+        opacity: 1.0;
+      }
+    }
+    .esriSimpleSliderDecrementButton {
+      float:left;
+      -webkit-transition: background-color .1s linear;
+      -moz-transition: background-color .1s linear;
+      -o-transition: background-color .1s linear;
+      transition: background-color .1s linear;
+      -webkit-transition: 0.1s ease;
+      -moz-transition: 0.1s ease;
+      -o-transition: 0.1s ease;
+      transition: 0.1s ease;
+      color: $table-color;
+      border:1px solid $midrange-border-color;
+      background-color: $table-bg;
+      width:30px;
+      height:34px;
+      font-size:16px;
+      line-height:30px;
+      -webkit-border-radius: 0px;
+      border-radius: 0px;
+      pointer-events: auto;
+      &:hover {
+        background-color: $table-bg;
+        opacity: 1.0;
+      }
+    }
+  }
+  @media only (min-width: 768px) {
+      .esriSimpleSlider {
+        max-width: 750px;
+      }
+    }
+    @media only (min-width: 992px) {
+      .esriSimpleSlider {
+        max-width: 970px;
+      }
+    }
+    @media only (min-width: 1200px) {
+      .esriSimpleSlider {
+        max-width: 2170px;
+      }
+    }
+  height: 350px;
+  background-color: $basemap-gray;
+  width: 100%;
+  .esriPopup .titlePane {
+    background-color: $brand-primary;
+  }
+  .esriPopup .sizer {
+    width: 350px;
+  }
+}

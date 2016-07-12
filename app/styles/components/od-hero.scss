@@ -1,0 +1,16 @@
+.hero {
+  //margin-top: $navbar-height;
+  padding-top: 20px;
+  height: 370px;
+  background-repeat: no-repeat;
+  background-position: center top;
+  background-size: cover;
+  margin-right:-15px;
+  margin-left:-15px;
+  .attribution {
+    color: lighten($text-color, 100%);
+    a {
+      color: lighten($text-color, 100%);
+    }
+  }
+}

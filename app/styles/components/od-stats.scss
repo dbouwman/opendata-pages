@@ -1,0 +1,20 @@
+.od-stats {
+  box-sizing: border-box;
+  margin: 20px 0px;
+  color: $panel-bg;
+  text-shadow: 0px 3px 2px rgba(0,0,0, 0.75);
+  font-size: $font-size-h1;
+  line-height: 38px;
+  text-align: left;
+    @media (max-width:560px){
+      font-size: $font-size-trenta;
+      line-height: 26px;
+    }
+    @media (max-width:350px){
+      font-size: $font-size-base;
+      line-height: 20px;
+    }
+    @media (max-width: 768px) {
+      margin-left: 25px;
+    }
+  }

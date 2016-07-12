@@ -1,0 +1,32 @@
+.twitter-typeahead {
+  .tt-menu {
+    // FOR DEBUGGING:
+    // display: block !important;
+
+    width: 100%;
+    background-color: $navbar-default-bg;
+    color: $navbar-default-color;
+    top: 34px !important;
+    margin: 2px 0 0;
+    border: $border-stroke;
+    border-color: $input-border;
+    overflow-x: hidden;
+  }
+  .tt-suggestion {
+    line-height: 3rem;
+    height: 3rem;
+    padding: 0 10px;
+    cursor: pointer;
+    strong {
+      color: $navbar-default-link-color;
+    }
+    &.tt-cursor, &:hover {
+      background-color: darken($navbar-default-bg, 30%);
+    }
+  }
+  .geolocate {
+    color: $navbar-default-link-color !important;
+    background-color: $navbar-default-bg !important;
+    font-weight: bold;
+  }
+}

@@ -1,0 +1,42 @@
+//== Page: Search 
+//== Component: Datasets Listing
+//== Description: Area containing the list of datasets in a search results. Does not include top or bottom pagination or filters.
+
+#search-results {
+  list-style-type: none;
+  list-style-position: outside;
+  padding: 0px;
+  margin: 0px;
+  li {
+    margin-bottom: 35px;
+  }
+  .metatags {
+    font-size: $font-size-tall;
+    font-weight: 600;
+    span {
+    margin-right: 10px;
+      i {
+        margin-right: 3px;
+      }
+    }
+    span.license {
+      margin-right: 0px;
+      .modal button {
+        box-shadow: $box-shadow-present;
+      }
+    }
+  }
+}
+.no-results-found {
+  margin: auto;
+  text-align: center;
+  width: 50%;
+  margin-top: 50px;
+  font-size: $font-size-trenta;
+}
+.no-results-found.btn {
+  width: 30%;
+  position: relative;
+  display: block;
+  margin-top: 7px;
+}

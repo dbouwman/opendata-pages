@@ -1,0 +1,39 @@
+//== Page: Umbrella Home 
+//== Component: Featured Organizations
+
+.featurette {
+  padding: 20px 0;
+  overflow: hidden;
+  .row {
+    padding: 20px 0;
+  }
+
+  .featurette-heading {
+    @media only screen and (max-width: 720px){
+      margin-left: 15px;
+    }
+  }
+}
+.featurette-orgs {
+  margin: 30px auto 20px auto;
+  @media only screen and (max-width: 490px){
+    display: none;
+  }
+  .logo-block {
+    padding-top: 117px;
+    height: 0px;
+    width:auto;
+    overflow: hidden;
+  }
+  .logo-block img {
+    position: relative;
+    display: block;
+    margin-top: -117px;
+    width: 144px;
+    height: auto;
+    top: 0px;
+  }
+  .logo-block img:hover {
+    margin-top: -234px;
+  }
+}

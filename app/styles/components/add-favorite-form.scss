@@ -1,0 +1,11 @@
+.add-favorite-form {
+  margin-top: 10px;
+  padding: 10px;
+  background-color: $form-bg;
+  .alert {
+    margin-top: 15px;
+  }
+  textarea {
+    resize: vertical;
+  }
+}

@@ -1,0 +1,551 @@
+/**
+ * site-expansion.scss
+ *
+ * Go from a small set of input variables to a full set of
+ * bootstrap variables which will flow through the opendata components
+ * to apply a custom theme.
+ *
+ * NOTE: All variables defined in this file must have defaults so that the sass will compile if no variables are supplied
+ *
+ * expected inbound variables:
+ * $brand-primary: #000000 !default;
+ * $brand-secondary: #000000 !default;
+ * $body-bg: #FFFFFF  !default;
+ * $text-color: #000000 !default;
+ */
+
+
+
+
+ // Colors
+ $link-color:                  $brand-secondary !default;
+ $link-hover-color:            darken($link-color, 10%) !default;
+ $brand-success:               #4CAF50 !default;
+ $brand-info:                  #2196F3 !default;
+ $brand-warning:               #FFC107 !default;
+ $brand-danger:                #F44336 !default;
+
+ $black:                       rgba(0,0,0,.87) !default;
+ $white:                       rgba(255,255,255,1) !default;
+ $brand-dark-gray:             darken($brand-gray, 60%) !default;
+ $basemap-gray:                #d1d0d4 !default;
+
+/**
+ * Import a set of color contrast functions
+ */
+@import '../mixins/contrast';
+
+//== Functions
+
+ @function setTextColor($color) {
+   @if (lightness($color) > 63) {
+     @return $black; // Lighter backgorund, return dark color
+   } @else {
+     @return $white; // Darker background, return light color
+   }
+ }
+
+ @function setBackgroundColor($color) {
+   @if (lightness($color) > 63) {
+     @return #222222; // Lighter Text, return dark color
+   } @else {
+     @return #f0f0f0; // Darker Text, return light color
+   }
+ }
+
+ @function setPlaceholderTextColor($color) {
+   @if (lightness($color) > 63) {
+     @return $black; // Light input bg, return dark color
+   } @else {
+     @return $white; // Dark input bg, return light color
+   }
+ }
+
+ /* TODO: Figure out lightness switch for accessibility; will this work http://codepen.io/MadeByMike/pen/sDpxg?*/
+ @function setPrimaryBtnTextColor($color) {
+   @if (lightness($color) > 63) {
+     @return $black; // Light button bg, return dark color
+   } @else {
+     @return $white; // Dark button bg, return light color
+   }
+ }
+
+ @function setTableRowHover($color) {
+   @if (lightness($color) > 63) {
+     @return darken($link-color, 30%); // Light table text, return dark color
+   } @else {
+     @return lighten($link-color, 30%); // Dark table text, return light color
+   }
+ }
+
+
+
+ //== Text
+ $cal-primary-text-color:              setTextColor($brand-primary) !default;
+ $cal-accent-text-color:               setTextColor($brand-gray) !default;
+
+ $h1-color:             $text-color !default;
+ $h2-color:             $text-color !default;
+ $h3-color:             $text-color !default;
+ $h4-color:             $text-color !default;
+ $h5-color:             $text-color !default;
+ $h6-color:             $text-color !default;
+ $list-item:            $brand-gray !default;
+ $icon-color:           $brand-dark-gray !default;
+
+ //== Structure
+ $cc-card-bg:                    $body-bg !default;
+ $card-border-color:          $brand-gray !default;
+ $card-stat-color:            $brand-primary !default;
+ $card-substat-color:         $brand-gray !default;
+ $card-caption-color:         $brand-dark-gray !default;
+ $light-border-color:         darken(#efefef, 5%) !default;
+ $midrange-border-color:      #ccc !default;
+ $panel-header-bg:            $brand-gray !default;
+ $panel-bg:                   $white !default;
+ $panel-footer-bg:            lighten($link-color, 52%) !default;
+ $toolbar-bg:                 darken($brand-dark-gray, 20%);
+ $sidebar-bg-color:           $body-bg !default;
+$jumbotron-top-margin:        $navbar-height;
+
+ //Mixin
+
+/* KS: Removed the !important on shadows - they were proving difficult to override in components*/
+ @mixin BoxShadowHelper($level){
+   @if $level == 0{
+     box-shadow: none;
+   }
+   @else if $level == 1{
+     box-shadow: 0 1px 1px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
+   }
+   @else if $level = 2{
+     box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
+   }
+   @else if $level = 3{
+     box-shadow: 0 10px 20px rgba(0,0,0,0.19), 0 6px 6px rgba(0,0,0,0.23);
+   }
+   @else if $level = 4{
+     box-shadow: 0 14px 28px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.22);
+   }
+   @else if $level = 5{
+     box-shadow: 0 19px 38px rgba(0,0,0,0.30), 0 15px 12px rgba(0,0,0,0.22);
+   }
+ }
+
+ //@mixin buttonVariant($color, $background) {
+   // MJ: this effectively does nothing because it is overridden by bootstrap and then calcite-bootstrap
+  //  color: $color;
+  //  background-color: $background;
+   //
+  //  $btn-background-hover: lighten($background, 10%);
+   //
+  //  &:focus,
+  //  &.focus {
+  //    color: $color;
+  //    background-color: $btn-background-hover;
+  //  }
+  //  &:hover {
+  //    color: $color;
+  //    background-color: $btn-background-hover;
+  //  }
+  //  &:active,
+  //  &.active,
+  //  .open > &.dropdown-toggle {
+  //    color: $color;
+  //    background-color: $btn-background-hover;
+   //
+  //    &:hover,
+  //    &:focus,
+  //    &.focus {
+  //      color: $color;
+  //      background-color: $btn-background-hover;
+  //    }
+  //  }
+  //  &:active,
+  //  &.active,
+  //  .open > &.dropdown-toggle {
+  //    background-image: none;
+  //  }
+  //  &.disabled,
+  //  &[disabled],
+  //  fieldset[disabled] & {
+  //    &:hover,
+  //    &:focus,
+  //    &.focus {
+  //      background-color: $background;
+  //    }
+  //  }
+   //
+  //  .badge {
+  //    color: $background !important;
+  //    background-color: $color !important;
+  //  }
+ //}
+
+ //== Typography
+
+ $font-family-sans-serif:   "Avenir Next W01","Avenir Next",Avenir,"Helvetica Neue",Helvetica,Arial,sans-serif !default;
+
+ $font-size-base:     14px !default;
+ $font-size-espresso: floor(($font-size-base * 0.75)) !default; //~10px same as font-size-small
+ $font-size-tall:     ceil(($font-size-base * 0.85)) !default;  //~12px
+ $font-size-grande:   ceil(($font-size-base * 1.25)) !default;  //~18px same as font-size-large
+ $font-size-venti:    ceil(($font-size-base * 1.4)) !default;   //~20px
+ $font-size-trenta:   ceil(($font-size-base * 1.55)) !default;  //~22px
+
+ $font-size-h1:     floor(($font-size-base * 2.0)) !default;  // ~28px
+ $font-size-h2:     ceil(($font-size-base * 1.7)) !default;   // ~24px
+ $font-size-h3:     ceil(($font-size-base * 1.55)) !default;  // ~22px
+ $font-size-h4:     floor(($font-size-base * 1.3)) !default;  // ~18px
+ $font-size-h5:     ceil(($font-size-base * 1.25)) !default;  // ~18px
+ $font-size-h6:     floor(($font-size-base * 1.05)) !default; // ~14px
+
+ $h1-btm-padding:   auto !default;
+ $h2-btm-padding:   auto !default;
+ $h3-btm-padding:   auto !default;
+ $h1-btm-border:    0px !default;
+ $h2-btm-border:    0px !default;
+ $h3-btm-border:    0px !default;
+
+ // Components
+ $border-radius-base:            0px !default;
+ $border-radius-large:           floor(($border-radius-base * 1.5)) !default; //~6px based on base of 4px
+ $border-radius-small:           floor(($border-radius-base * 0.8)) !default; //~3px based on base of 4px
+
+ // Table
+
+ $table-bg:                      $white !default;
+ $table-color:                   $brand-dark-gray !default;
+ $table-cell-padding:            $font-size-tall !default;
+ $row-color:                     #efefef !default;
+ $row-hover-color:               setTableRowHover($table-color) !default;
+
+ //=== Inverted navbar
+ $navbar-inverse-bg:                        darken($brand-primary, 6.25%) !default;
+
+ //Navbar
+ $navbar-default-bg:                        $brand-primary !default;
+ $navbar-default-border:                    rgba(0,0,0,0)  !default;
+ $navbar-height:                            50px !default;
+
+ $navbar-default-color:                     $cal-primary-text-color !default;
+ $navbar-default-link-color:                $cal-primary-text-color !default;
+ $navbar-default-link-hover-color:          $link-color !default;
+ $navbar-default-link-hover-bg:             transparent !default;
+ $navbar-default-link-active-color:         $cal-primary-text-color !default;
+ $navbar-default-link-active-bg:            darken($brand-primary, 10%) !default;
+ $navbar-default-link-disabled-color:       #ccc !default;
+ $navbar-default-link-disabled-bg:          transparent !default;
+
+ $navbar-link-alignment:                    none !default; //none, left, right
+ $navbar-link-btm-padding:                  auto !default;
+ $navbar-link-top-padding:                  auto !default;
+ $navbar-link-btm-border:                   0px !default;
+ $navbar-link-top-border:                   0px !default;
+ $profilename-visibility:                   inline-block !default; //none, inline-block
+
+ //== Forms
+ $border-stroke:                            1px solid !default;
+ $form-bg:                                  #efefef !default;
+ $input-bg:                                 transparent !default;
+ $input-color-placeholder:                  setPlaceholderTextColor($input-bg) !default;
+ $input-color-placeholder-home:             setPlaceholderTextColor($body-bg) !default;
+ $input-color-placeholder-navbar:           setPlaceholderTextColor($navbar-default-bg) !default;
+ $input-border-focus:                       lighten($link-color, 10%) !default;
+ $input-border:                             $midrange-border-color;
+ $official-mark:                            $link-color !default;
+
+ // Button
+ $btn-default-bg:                $body-bg !default;
+ $btn-default-color:             $brand-secondary !default;
+ $btn-default-border:            $brand-secondary !default;
+
+ $btn-primary-bg:                $brand-secondary !default;
+ $btn-primary-color:             setPrimaryBtnTextColor($btn-primary-bg) !default;
+ $btn-primary-border:            $brand-primary !default;
+
+ $btn-accent-color:              $navbar-default-bg !default;
+ $btn-accent-bg:                 $navbar-default-link-color !default;
+ $btn-accent-border:             $navbar-default-link-color !default;
+
+ $btn-success-color:             $white !default;
+ $btn-success-bg:                $brand-success !default;
+
+ $btn-info-color:                $white !default;
+ $btn-info-bg:                   $brand-info !default;
+
+ $btn-warning-color:             $black !default;
+ $btn-warning-bg:                $brand-warning !default;
+
+ $btn-danger-color:              $white !default;
+ $btn-danger-bg:                 $brand-danger !default;
+
+ $btn-connect-color:             $white !default;
+ $btn-connect-bg:                $brand-dark-gray !default;
+ $btn-connect-border:            $brand-dark-gray !default;
+
+ $btn-background-hover:          $link-hover-color !default;
+ $btn-color-hover:               $white !default;
+ $btn-link-disabled-color:       $brand-gray !default;
+
+ //Button Hover Settings (for Default)
+ .btn.btn-default {
+  &:focus,
+  &.focus {
+    color: $btn-color-hover;
+    background-color: $btn-background-hover;
+  }
+  &:hover {
+    color: $btn-color-hover;
+    background-color: $btn-background-hover;
+  }
+  &:active,
+  &.active,
+  .open > &.dropdown-toggle {
+    background-color: $btn-background-hover;
+    &:hover,
+    &:focus,
+    &.focus {
+      color: $btn-color-hover;
+      background-color: $btn-background-hover;
+    }
+  }
+ }
+ .btn.btn-default.disabled:hover {
+     color: $btn-default-color;
+ }
+
+ //== Shadows
+ $box-shadow-color:              $body-bg !default;
+ $box-shadow-present:            none !default;
+ $sidebar-shadow:                $brand-dark-gray !default;
+
+ //== Footer
+ $footer-height:                 66px !default;
+ $footer-bg:                     lighten($brand-gray, 20%) !default;
+ $footer-text-color:             setTextColor($footer-bg) !default;
+
+
+/*
+KS: Don't understand why !important is on these:
+ - It's forcing a shadow, which is very hard to get rid of
+ - It's removing a border on btns, which umbrella does need
+ - It removes outline, which is bad accessibility
+*/
+
+.btn{
+   @include BoxShadowHelper(1);
+   border: 0px;
+   &:hover,
+   &:focus,
+   &.focus{
+     @include BoxShadowHelper(1);
+   }
+   &:active,
+   &.active {
+     @include BoxShadowHelper(5);
+   }
+ }
+
+ .btn-link{
+   @include BoxShadowHelper(0);
+   &:hover,
+   &:focus,
+   &.focus,
+   &:active,
+   &.active {
+     @include BoxShadowHelper(0);
+   }
+ }
+
+ // .btn-default {
+ //   @include buttonVariant($btn-default-color, $btn-default-bg);
+ // }
+ // .btn-primary {
+ //   @include buttonVariant($btn-primary-color, $btn-primary-bg);
+ // }
+ // // Success appears as green
+ // .btn-success {
+ //   @include buttonVariant($btn-success-color, $btn-success-bg);
+ // }
+ // // Info appears as blue-green
+ // .btn-info {
+ //   @include buttonVariant($btn-info-color, $btn-info-bg);
+ // }
+ // // Warning appears as orange
+ // .btn-warning {
+ //   @include buttonVariant($btn-warning-color, $btn-warning-bg);
+ // }
+ // // Danger and error appear as red
+ // .btn-danger {
+ //   @include buttonVariant($btn-danger-color, $btn-danger-bg);
+ // }
+ //
+ // .btn-accent {
+ //   @include buttonVariant($btn-accent-color, $btn-accent-bg);
+ // }
+
+
+ //Ripple Effect
+ /*KS: Don't know what this intended to do, but b/c it's not defined as variables, it
+ was royally jacking up every button in a dropdown menu and I had no way to override it except go into
+ components button by button, which I opted not to do.*/
+
+ /*.btn {
+   position: relative;
+   overflow: hidden;
+ }
+
+ .btn > * {
+   position: relative;
+ }
+
+ .btn span {
+   display: block;
+   padding: 12px 24px;
+ }
+
+ .btn:before {
+   content: "";
+
+   position: absolute;
+   top: 50%;
+   left: 50%;
+
+   display: block;
+   width: 0;
+   padding-top: 0;
+
+   border-radius: 100%;
+
+   background-color: rgba(236, 240, 241, .3);
+
+   -webkit-transform: translate(-50%, -50%);
+   -moz-transform: translate(-50%, -50%);
+   -ms-transform: translate(-50%, -50%);
+   -o-transform: translate(-50%, -50%);
+   transform: translate(-50%, -50%);
+ }
+
+ .btn:active:before {
+   width: 160%;
+   height: 160%;
+   padding-top: 160%;
+   transition: width .2s ease-out, padding-top .2s ease-out;
+ }*/
+
+ @mixin labelVariant($color) {
+   background-color: $color;
+
+   &[href] {
+     &:hover,
+     &:focus {
+       background-color: darken($color, 10%);
+     }
+   }
+ }
+
+ //== Labels
+ //
+ //##
+
+ .label{
+   border-radius: $border-radius-base!important;
+   font-weight: normal!important;
+   &.label-warning{
+     color:$black;
+   }
+   &.label-primary{
+     color:$cal-primary-text-color;
+   }
+ }
+
+ $label-accent-bg: $brand-gray !default;
+ .label-accent {
+   @include labelVariant($label-accent-bg);
+ }
+
+
+ //== Form states and alerts
+
+ //## Define colors for form feedback states and, by default, alerts.
+
+ $state-success-text:             darken($brand-success, 80%) !default;
+ $state-success-bg:               lighten($brand-success,30%) !default;
+ $state-success-border:           rgba(0,0,0,0) !default;
+
+ $state-info-text:                darken($brand-info, 80%) !default;
+ $state-info-bg:                  lighten($brand-info,30%) !default;
+ $state-info-border:              rgba(0,0,0,0) !default;
+
+ $state-warning-text:             darken($brand-warning, 80%) !default;
+ $state-warning-bg:               lighten($brand-warning,30%) !default;
+ $state-warning-border:           rgba(0,0,0,0) !default;
+
+ $state-danger-text:              darken($brand-danger, 80%) !default;
+ $state-danger-bg:                lighten($brand-danger,30%) !default;
+ $state-danger-border:            rgba(0,0,0,0) !default;
+
+
+ //== Panel
+ .panel{
+   @include BoxShadowHelper(1);
+   border: none;
+   color: #333333;
+ }
+
+ //== List group
+ .list-group{
+   @include BoxShadowHelper(1);
+   & .list-group-item:first-of-type{
+     border-top: none;
+   }
+   & .list-group-item:last-of-type{
+     border-bottom: none;
+   }
+   color: #333333;
+ }
+
+ //== Dropdowns
+ //## Dropdown menu container and contents.
+
+ $dropdown-border:                rgba(0,0,0,0) !default;
+ .dropdown-menu{
+   border: none;
+   @include BoxShadowHelper(3);
+   > li > a {
+     padding: 8px 20px;
+   }
+ }
+
+ //== Badges
+
+ $badge-color:                 $cal-primary-text-color !default;
+ $badge-link-hover-color:      $cal-primary-text-color !default;
+ $badge-bg:                    $brand-primary !default;
+
+//== Links
+/*KS: These !important are a necessary override of Bootstrap's scaffording file.
+I'm not applying outlines on a <a> basis through the app & webkit's
+default outline color is too dark on dark themes*/
+ a:focus {
+  outline-color: $link-color !important;
+  outline: thin dotted;
+  outline: 5px auto $link-color !important;
+  outline-offset: -2px;
+}
+
+ //== Carousel
+
+ $carousel-text-shadow:                        none !default;
+
+ $carousel-control-color:                      $brand-primary !default;
+ $carousel-control-opacity:                    .8 !default;
+
+ // Jumbotron
+
+ $jumbotron-bg:                   transparent !default;
+
+ //== Wells
+
+ $well-bg:                        setBackgroundColor($text-color) !default;

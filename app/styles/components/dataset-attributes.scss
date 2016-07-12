@@ -1,0 +1,56 @@
+.dataset-attributes {
+  .fld-large {
+    list-style:none;
+    padding:0;
+    margin:0;
+
+    li {
+      width:100%;
+      margin: 5px 0 5px 0;
+      border: 1px solid $midrange-border-color;
+      padding: 10px;
+      min-height:60px;
+    }
+    .fld-info {
+      float:left;
+      width:180px;
+      overflow: hidden;
+      text-overflow: ellipsis;
+
+    }
+  }
+  .fld-tag {
+    list-style:none;
+    padding:0;
+    margin:0;
+    li {
+      float:left;
+      margin: 5px 5px 5px 0;
+      border: 1px solid $midrange-border-color;
+      padding: 10px;
+      text-align: center;
+      outline: 0px solid transparent;
+      -moz-transition: border-color 1s ease-in, outline 1s ease-in;    /* FF3.7+ */
+      -o-transition: border-color 1s ease-in, outline 1s ease-in;      /* Opera 10.5 */
+      -webkit-transition: border-color 1s ease-in, outline 1s ease-in; /* Saf3.2+, Chrome */
+      transition: border-color 1s ease-in, outline 1s ease-in;
+      &.fade-outline {
+        border-color: $link-color;
+        outline: 1px solid $link-color;
+      }
+    }
+    .show-more {
+      cursor: pointer;
+      border-color: $link-color;
+      color: $link-color;
+      &:hover {
+        border: 1px solid $link-hover-color;
+        color:  $link-hover-color;
+        strong {
+          text-decoration: underline;
+        }
+      }
+
+    }
+  }
+}

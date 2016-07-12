@@ -3,15 +3,22 @@
   <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>OpendataPages</title>
+    <title>Open Data Pages-as-Items</title>
     <meta name="description" content="">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-
+    <script>
+    if(window.localStorage){
+      let chk = window.localStorage.getItem('__torii_request');
+      if(chk){
+        window.localStorage.removeItem('__torii_request');
+      }
+    }
+    </script>
     {{content-for "head"}}
 
     <link rel="stylesheet" href="assets/vendor.css">
-    <link rel="stylesheet" href="assets/opendata-pages.css">
-
+    <link rel="stylesheet" href="assets/opendata.css">
+    <script src="https://cdn.polyfill.io/v2/polyfill.min.js?features=Intl.~locale.en"></script>
     {{content-for "head-footer"}}
   </head>
   <body>

@@ -1,0 +1,54 @@
+<div class="page-editor has-inner-drawer-no">
+  <div class="container">
+    <div class="row">{{page-info-card model=model}}</div>
+  </div>
+  {{page-body model=model
+              onDragStart=(action 'onLayoutDragStart')
+              onDragEnd=(action 'onLayoutDragEnd')
+              onEditSettings=(action 'onEditSettings')}}
+</div>
+
+{{#bs-drawer onGoBack=(action 'onGoBack') header=(t 'pages.drawer.back')}}
+  {{settings-editor-container editorComponentName=editorComponentName model=editorModel onModelChanged=(action 'onModelChanged')}}
+  {{page-editor model=model show=showPageEditor
+    onModelChanged=(action 'onModelChanged')
+    onPageSave=(action 'onPageSave')
+    onPageView=(action 'onPageView') }}
+{{/bs-drawer}}
+
+{{#if showConfirmViewPage}}
+  {{#od-modal modalId="confirmModal" modalTitle=(t 'pages.modals.loseChanges.title')}}
+    <div class="modal-body">
+      <p>{{t 'pages.modals.loseChanges.message'}}</p>
+    </div>
+    <div class="modal-footer">
+      <button type="button" class="btn btn-default" data-dismiss="modal" {{action "stayOnPage"}}>{{t 'pages.modals.loseChanges.stay'}}</button>
+      <button type="button" class="btn btn-primary" data-dismiss="modal" {{action "continueToViewPage" model}}>{{t 'pages.modals.loseChanges.leave'}}</button>
+    </div>
+  {{/od-modal}}
+{{/if}}
+
+
+{{#if showConfirmViewPagesList}}
+  {{#od-modal modalId="confirmModal" modalTitle=(t 'pages.modals.loseChanges.title')}}
+    <div class="modal-body">
+      <p>{{t 'pages.modals.loseChanges.message'}}</p>
+    </div>
+    <div class="modal-footer">
+      <button type="button" class="btn btn-default" data-dismiss="modal" {{action "stayOnPage"}}>{{t 'pages.modals.loseChanges.stay'}}</button>
+      <button type="button" class="btn btn-primary" data-dismiss="modal" {{action "continueToPagesList"}}>{{t 'pages.modals.loseChanges.leave'}}</button>
+    </div>
+  {{/od-modal}}
+{{/if}}
+
+{{#if showConfirmDelete}}
+  {{#od-modal modalId="confirmModal" modalTitle=(t 'pages.modals.delete.title')}}
+    <div class="modal-body">
+      <p>{{t 'pages.modals.delete.message'}}</p>
+    </div>
+    <div class="modal-footer">
+      <button type="button" class="btn btn-default" data-dismiss="modal" {{action "stayOnPage"}}>{{t 'pages.modals.delete.stay'}}</button>
+      <button type="button" class="btn btn-danger" data-dismiss="modal" {{action "onPageDelete" model}}>{{t 'pages.modals.delete.delete'}}</button>
+    </div>
+  {{/od-modal}}
+{{/if}}

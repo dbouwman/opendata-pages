@@ -1,0 +1,38 @@
+/*// Global Overrides to make buttons use $link-color over the Calcite Official color
+.btn-default {
+	color: $link-color;
+	border-color: $link-color;
+	&:hover, :active {
+		background-color: $link-hover-color !important;
+		color: $Calcite_Gray_050 !important;
+		border-color: darken($link-hover-color, 10%);
+	}
+	&:focus {
+		background-color: $Calcite_Gray_050;
+		color: $link-color;
+	}
+}
+
+.btn-link {
+	color: $link-color !important;
+	&:hover, :active {
+		color: $link-hover-color !important;
+	}
+	&:focus {
+		color: $link-color;
+	}
+}
+
+
+// Overrides to get Calcite navbar to use $link-color
+.navbar-nav {
+  > li {
+    > a {
+      &:hover,
+      &:focus {
+        background-image: linear-gradient(to top, transparent 92%, $link-color 93%, $link-color 100%);
+        transition: color 150ms linear, text-decoration 150ms linear;
+      }
+    }
+  }
+}*/

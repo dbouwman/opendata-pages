@@ -1,0 +1,11 @@
+/** Styles for pages below /people **/
+
+.page-people {
+  .truncate-page-name {
+    width: 350px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display:inline-block;
+  }
+}

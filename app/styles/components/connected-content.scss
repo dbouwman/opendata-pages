@@ -1,0 +1,156 @@
+.connected-content {
+  margin-top: 10px;
+
+    .related-content-tabs {
+    border: 0px;
+    }
+    .related-content-tabs > li > a:hover,
+    .related-content-tabs > li.active > a {
+      border: 1px solid transparent;
+    }
+
+  .nav-tabs {
+    margin-top: 10px;
+    border-bottom: 1px solid $midrange-border-color;
+
+    a {
+      background-color: $btn-primary-bg;
+      color: $btn-primary-color;
+      border-radius: $border-radius-base;
+      border: 1px solid $btn-primary-bg;
+      &:hover,
+      &:focus {
+        background-color: $link-hover-color;
+        color: $btn-primary-color;
+        border: 1px solid $btn-primary-bg;
+        padding-top: 10px;
+        text-decoration: underline;
+      }
+    }
+    a.active {
+      background-color: $cc-card-bg;
+      color: $text-color;
+      border-bottom: 1px solid transparent;
+      &:hover {
+        color: $text-color;
+        padding-top: 10px;
+        text-decoration: none;
+      }
+      &:focus {
+        text-decoration: none;
+      }
+    }
+    li.active > a {
+      color: $text-color;
+      &:hover {
+      	padding-top: 10px;
+      	text-decoration: none;
+      }
+    }
+  }
+
+  .tab-content {
+  	margin-top: 15px;
+  }
+
+  .connected-card {
+  	position: relative;
+  	// min-height: 169px;
+  	min-height: 136px;
+  	min-width: 460px;
+  	border: 3px solid $card-border-color;
+  	border-radius: $border-radius-base;
+  	margin-bottom: 10px;
+    background-color: $cc-card-bg;
+	  .left-pane {
+	  	  background-color: $btn-connect-bg;
+	  	  color: $btn-primary-color;
+	  	  max-width: 170px;
+	  	  //max-width: 200px;
+	  	  margin-right: 20px;
+	  	  // height: 163px;
+
+	  	img {
+	  	  width: 170px;
+	  	  height: 130px;
+	  	  //width: 200px;
+          //height: 133px;
+	  	}
+	  	button {
+	  	  width: 100%;
+	  	  border-radius: $border-radius-base;
+	  	  border: $btn-connect-border;
+	  	  background-color: $btn-connect-bg;
+	  	  color: $btn-connect-color;
+	  	  box-shadow: $box-shadow-present;
+	  	  text-align: left;
+	  	  sup {
+	  	  	display:none;
+	  	  }
+	  	}
+	  }
+	  h4 {
+	  	max-height: 48px;
+	  	overflow: hidden;
+	  	font-size: $font-size-base;
+		margin-right: 20px;
+		white-space: nowrap;
+  		overflow: hidden;
+  		text-overflow: ellipsis;
+  		margin: 10px auto 7px auto;
+	  }
+	  .divider{
+	  	background-color: lighten($link-color, 40%);
+	  	width: 80px;
+	  	height: 3px;
+	  	margin-bottom: 7px;
+	  }
+	  .desc {
+	  	position: relative;
+	  	//height: 55px;
+	  	height: 50px;
+	  	overflow: hidden;
+	  	font-size: $font-size-tall;
+	  	line-height: floor(($font-size-base * 1.1));
+	  	margin-right: 20px;
+	  }
+	  .text-fade {
+	  	width: 100%;
+	    height: 10px;
+	    position: absolute;
+	    bottom: 0px;
+	    box-shadow: inset 0px -30px 40px -20px $cc-card-bg;
+	  }
+	  .details {
+	  	position: absolute;
+	  	bottom: 5px;
+	  	left: 190px;
+	  	font-size: $font-size-tall;
+	  	span {
+	  	  font-weight: bold;
+	  	  text-transform: uppercase;
+	  	}
+	  }
+	}
+	.official {
+  	position: absolute;
+  	right: 0px;
+  	width: 0;
+	height: 0;
+	border-style: solid;
+	border-width: 0 20px 20px 0;
+	border-color: transparent $official-mark transparent transparent;
+  	}
+  	.circle {
+  	position: absolute;
+  	bottom: 7px;
+	left: -10px;
+  	width: 5px;
+	height: 5px;
+	background: $official-mark;
+	-moz-border-radius: 50px;
+	-webkit-border-radius: 50px;
+	border-radius: 50px;
+  	}
+
+}

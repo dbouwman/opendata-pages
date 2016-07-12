@@ -1,0 +1,129 @@
+//== Page: Dataset
+//== Component: Dataset Table
+//== Description: Area containing the table, header and pagination on the dataset Data tab
+
+.table-component {
+  .table {
+    box-shadow: $box-shadow-present;
+    background-color: $table-bg;
+  }
+  .table-header {
+    display: inline;
+    margin: 7px 10px 0px 5px;
+    }
+
+  .btn-toolbar {
+    display: inline-block;
+    vertical-align: middle;
+    min-height: 40px;
+  }
+  .filter-hint {
+    margin-top: 7px;
+    line-height: 2em;
+  }
+  .dataset-filter-component {
+    margin-bottom: 5px;
+    &:focus {
+      color: $link-color;
+      outline-color: $link-color;
+    }
+  }
+  &.sortable {
+    th span {
+      cursor: pointer;
+      outline-color: $link-color;;
+    }
+  }
+  th span.filter-icon {
+    cursor: pointer;
+  }
+  .table-responsive {
+    color:  $table-color;
+    margin-top: 5px;
+    min-height: 417px;
+    a.filter-icon {
+      color: $table-color;
+      text-decoration: none;
+    }
+  }
+  .table-toolbar {
+    margin-bottom: 15px;
+  }
+  .dropdown-toggle:focus {
+    outline: auto;
+    outline-color: $link-color;
+  }
+  th {
+    white-space: nowrap;
+    &.sorted {
+    }
+    .caret-up {
+      display: inline-block;
+      width: 0;
+      height: 0;
+      margin-left: 2px;
+      vertical-align: middle;
+      border-bottom: 4px dashed;
+      border-bottom: 4px solid \9;
+      border-right: 4px solid transparent;
+      border-left: 4px solid transparent;
+    }
+  }
+  .table-bordered,
+  .table-bordered > thead > tr > th,
+  .table-bordered > tbody > tr > td {
+    border-color: lighten($text-color, 30%);
+  }
+  .table-striped > tbody > tr:nth-of-type(odd) {
+    background-color: $row-color;
+
+  }
+  .table > tbody > tr:hover {
+    background-color: $row-hover-color;
+  }
+  td {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    max-width: 250px;
+  }
+  .loader {
+    position: absolute;
+    top: 100px;
+    left: 0;
+    right: 0;
+  }
+  .error-container {
+    padding: 0 15px;
+    position: absolute;
+    top: 100px;
+    left: 0;
+    right: 0;
+  }
+  ul.pagination
+  {
+    li {
+      a {
+        cursor: pointer;
+      }
+    }
+  }
+  &.full-screen {
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background-color: $table-bg;
+    z-index: 999;
+    padding: 0 15px;
+    overflow-x: scroll;
+    overflow-y: scroll;
+    td, th {
+      white-space: nowrap;
+    }
+    .loader {
+      min-height: 760px;
+    }
+  }
+}

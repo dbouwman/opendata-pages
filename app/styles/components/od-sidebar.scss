@@ -1,0 +1,135 @@
+.od-sidebar-hover-zone {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  width: 20px;
+  height: 100%;
+  z-index: 100;
+}
+#od-sidebar {
+  position: absolute;
+  top: ($navbar-height + 1px);
+  right: 0;
+  bottom: 0;
+  width: 300px;
+  color: $text-color;
+  background-color: $sidebar-bg-color;
+  padding: 10px 15px;
+  z-index: 1000;
+  border-left: 1px solid rgba($light-border-color, 0.5);
+  -webkit-box-shadow: -3px 2px 5px 0px rgba($sidebar-shadow, 0.5);
+  -moz-box-shadow:    -3px 2px 5px 0px rgba($sidebar-shadow, 0.5);
+  box-shadow:         -3px 2px 5px 0px rgba($sidebar-shadow, 0.5);
+  overflow: hidden;
+  overflow-y: auto;
+  transition: left 0.5s linear;
+  -webkit-transition: left 0.5s linear;
+  -moz-transition: left 0.5s linear;
+  -ms-transition: left 0.5s linear;
+  transition: right 0.5s linear;
+  -webkit-transition: right 0.5s linear;
+  -moz-transition: right 0.5s linear;
+  -ms-transition: right 0.5s linear;
+  .open-left {
+    position: absolute;
+    left: 0px;
+    top: 400px;
+  }
+  &.off-right {
+    right:-500px;
+  }
+  &.peek {
+    right:-285px;
+  }
+  #my-data-see-all {
+    width:100%;
+    text-align:right;
+    display: block;
+  }
+
+  ul.notifications {
+    list-style-type: none;
+    list-style-position: outside;
+    margin: 10px 0px 0px 0px;
+    padding: 0px;
+    font-size: $font-size-base;
+    .row {
+      margin: 10px auto;
+    }
+    .card-footer {
+      background-color: $form-bg;
+      color: $brand-dark-gray;
+    }
+
+    label {
+        font-weight: normal;
+        display: inline;
+    }
+    input[type="checkbox"] {
+        margin-right: 5px;
+    }
+
+    .note-type {
+        text-transform: uppercase;
+        font-size: $font-size-espresso;
+        color: $list-item;
+    }
+    .mods {
+        display: inline-block;
+        margin-top: 5px;
+        margin-right: 5px;
+        font-size: $font-size-espresso;
+        padding: 3px 4px;
+        border: 1px solid $midrange-border-color;
+    }
+  }
+  .nav-tabs {
+  border-bottom: 1px solid $midrange-border-color;
+  margin-top: 10px;
+
+  a {
+      background-color: $btn-primary-bg;
+      color: $btn-primary-color;
+      border-radius: $border-radius-base;
+      border: 1px solid $btn-primary-bg;
+      &:hover {
+        background-color: $link-hover-color;
+        color: $btn-primary-color;
+        border: 1px solid $btn-primary-bg;
+        padding-top: 10px;
+        text-decoration: underline;
+      }
+    }
+    li.active a {
+      background-color: $sidebar-bg-color;
+      color: $text-color;
+      border: 1px solid $midrange-border-color;
+      border-bottom: 1px solid transparent;
+      &:hover {
+        color: $btn-primary-color;
+        padding-top: 10px;
+        text-decoration: none;
+      }
+      &:focus {
+        text-decoration: none;
+      }
+    }
+    li.active > a {
+      color: $text-color;
+      &:hover {
+        padding-top: 10px;
+        color: $text-color;
+      }
+    }
+  }
+  .btn {
+      margin-top: 10px;
+      box-shadow: $box-shadow-present;
+  }
+  button.close {
+    color: $text-color;
+    opacity: 1;
+    float: left;
+  }
+}

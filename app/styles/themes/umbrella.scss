@@ -1,0 +1,176 @@
+/**
+ * umbrella.scss
+ * Variables that drive the umbrella theme
+ */
+//== Boolean Flags
+$flags-iframeheader: false;
+$flags-umbrella:true;
+
+ //== Colors
+ $white:							  #ffffff;
+ $brand-dark-gray:			#4c4c4c;
+ $basemap-gray:					#d1d0d4;
+ $brand-gray:						#4c4c4c;
+ $brand-primary:				#136fbf;
+ $brand-secondary:			#a9a9a9;
+ $brand-success:				#5A9359;
+ $body-bg:              #f8f8f8;
+
+ $text-color:           #4C4C4C;
+ $h1-color:							$text-color;
+ $h2-color:							$text-color;
+ $h3-color:							$text-color;
+ $h4-color:							$text-color;
+ $h5-color:							$text-color;
+ $h6-color:							$text-color;
+ $list-item:						#959595;
+ $icon-color:						#6e6e6e;
+
+ //== Scaffolding
+ $link-color:						$brand-primary;
+ $link-hover-color:			darken($link-color, 10%);
+ $light-border-color:		darken(#efefef, 5%);
+ $midrange-border-color:#cccccc;
+
+ //== Shadows
+ $box-shadow-color:				$white;
+ $box-shadow-present:		  none;
+ $sidebar-shadow:					#828282;
+
+ //== Panels/Cards
+ $cc-card-bg:						$white;
+ $card-border-color:				#e0e0e0;
+ $card-stat-color:					$brand-secondary;
+ $card-substat-color:				$brand-secondary;
+ $card-caption-color:				$brand-gray;
+ $panel-header-bg:					$white;
+ $panel-bg:							$white;
+ $panel-footer-bg:					lighten($link-color, 52%);
+ $toolbar-bg:						#959595;
+ $sidebar-bg-color:					$white;
+ $jumbotron-top-margin:				0px;
+
+ //== Typography
+ $font-family-sans-serif: 	"Avenir Next W01","Avenir Next",Avenir,"Helvetica Neue",Helvetica,Arial,sans-serif;
+
+ $font-size-small:		12px;
+ $font-size-base:		  14px;
+ $font-size-large:		18px;
+ $font-size-espresso: floor(($font-size-base * 0.75)); //~10px same as font-size-small
+ $font-size-tall:		  ceil(($font-size-base * 0.85));  //~12px
+ $font-size-grande:		ceil(($font-size-base * 1.25));  //~18px same as font-size-large
+ $font-size-venti:		ceil(($font-size-base * 1.4));   //~20px
+ $font-size-trenta:		ceil(($font-size-base * 1.55));  //~22px
+
+ $font-size-h1:			floor(($font-size-base * 2.0));  // ~28px
+ $font-size-h2:			ceil(($font-size-base * 1.7));   // ~24px
+ $font-size-h3:			ceil(($font-size-base * 1.55));  // ~22px
+ $font-size-h4:			floor(($font-size-base * 1.3));  // ~18px
+ $font-size-h5:			ceil(($font-size-base * 1.25));  // ~18px
+ $font-size-h6:			floor(($font-size-base * 1.05)); // ~14px
+
+ $h1-btm-padding:   auto;
+ $h2-btm-padding:		auto;
+ $h3-btm-padding:		auto;
+ $h1-btm-border:		0px;
+ $h2-btm-border:		0px;
+ $h3-btm-border:		0px;
+
+ //==Components
+ //======================
+
+ //== Footer
+ $footer-height:				         64px;
+ $footer-bg:						         #f4f4f4;
+
+ //==Table
+
+ $table-bg:                      $white !default;
+ $table-color:                   $brand-dark-gray;
+ $table-cell-padding:            $font-size-tall !default;
+ $row-color:                     #efefef !default;
+
+ //== Form Elements
+ $border-radius-base:				     0px;
+ $border-stroke:					       1px solid;
+ $form-bg:							         #efefef;
+ $input-bg:							         $body-bg;
+ $input-color-placeholder: 			 #6e6e6e;
+ $input-color-placeholder-home:  #6e6e6e;
+ $input-color-placeholder-navbar:#6e6e6e;
+ $input-border-focus: 				   #80b2dd;
+ $input-border:						       #a9a9a9;
+ $official-mark:					       #4f4273;
+
+ //== Navbar
+ $navbar-default-brand-color:			#323232;
+ $navbar-height: 						      55px;
+ $navbar-default-link-color: 			$link-color;
+ $navbar-default-link-hover-color:darken($link-color, 10%);
+ $navbar-default-color:           $text-color;
+ $navbar-default-bg: 					    $white;
+ $navbar-default-link-hover-bg:   transparent;
+ $navbar-default-link-active-bg:	#136fbf;
+
+ $navbar-link-alignment:				none; //float attributes
+ $navbar-link-btm-padding:      auto;
+ $navbar-link-top-padding:		  auto;
+ $navbar-link-btm-border:				0px;
+ $navbar-link-top-border:				0px;
+ $profilename-visibility:				inline-block; //display attributes
+
+ //== Buttons
+ $btn-default-color:              		$brand-primary;
+ $btn-default-bg:                 		$white;
+ $btn-default-border:             		$brand-primary;
+
+ $btn-primary-color:              		$white;
+ $btn-primary-bg:                 		$brand-primary;
+ $btn-primary-border:         	  		$brand-primary;
+
+ $btn-connect-color:					        $white;
+ $btn-connect-bg:						          #4c4c4c;
+ $btn-connect-border:					        #4c4c4c;
+
+ $btn-accent-color:              		$btn-primary-color;
+ $btn-accent-bg:                 		$btn-primary-bg;
+ $btn-accent-border:  					    $btn-primary-border;
+
+ $btn-background-hover:             $link-hover-color;
+ $btn-color-hover:                  $white;
+ $btn-link-disabled-color:          $brand-gray;
+
+ //== Pagination
+ $pagination-color:                     $link-color !important;
+ $pagination-bg:                        $white !important;
+ $pagination-border:                    #e7e7e7 !important;
+
+ $pagination-hover-color:               $white important;
+ $pagination-hover-bg:                  $link-hover-color !important;
+ $pagination-hover-border:              $link-hover-color !important;
+
+ $pagination-active-color:              $panel-bg !important;
+ $pagination-active-bg:                 $link-hover-color !important;
+ $pagination-active-border:             $link-hover-color !important;
+
+ $pagination-disabled-color:            #777777 !important;
+ $pagination-disabled-bg:               #e7e7e7 !important;
+ $pagination-disabled-border:           #e7e7e7 !important;
+
+ //== Alerts
+
+ $state-success-text:            $text-color;
+ $state-success-bg:              #ddeedb;
+ $state-success-border:          #9bc19c;
+
+ $state-info-text:             	 $text-color;
+ $state-info-bg:               	 #d2e9f9;
+ $state-info-border:           	 #3b8fc4;
+
+ $state-warning-text:            $text-color;
+ $state-warning-bg:              #f3edc7;
+ $state-warning-border:          #d9bf2b;
+
+ $state-danger-text:             #c7461a;
+ $state-danger-bg:               #f3ded7;
+ $state-danger-border:           #e4a793;

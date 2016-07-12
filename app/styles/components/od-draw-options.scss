@@ -1,0 +1,27 @@
+.draw-option {
+  float: left;
+  margin-right: 4px;
+  margin-top: -1px;
+  cursor: pointer;
+  border: 1px solid $body-bg;
+  padding: 4px;
+  img {
+    height:18px;
+  }
+}
+
+#draw-option-single.single {
+  border:1px solid $midrange-border-color;
+}
+
+#draw-option-graduated.graduated {
+  border:1px solid $midrange-border-color;
+}
+
+#draw-option-choropleth.choropleth {
+  border:1px solid $midrange-border-color;
+}
+
+#draw-option-type.type {
+  border:1px solid $midrange-border-color;
+}

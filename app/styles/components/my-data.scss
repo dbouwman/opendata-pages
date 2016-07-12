@@ -1,0 +1,144 @@
+#my-data-container {
+  margin-top: 70px;
+  ul {
+    margin-left:0px;
+    margin-top:20px;
+    padding-left:0px;
+  }
+
+  h1 {
+    font-size: $font-size-venti;
+    font-weight: 500;
+    display: inline-block;
+    margin: 0px auto 10px auto;
+  }
+  h2 {
+    font-size: $font-size-grande;
+    font-weight: 500;
+    width: 100%;
+    padding-bottom: 5px;
+    border-bottom: 1px solid $midrange-border-color;
+  }
+
+  ul.notifications {
+    list-style-type: none;
+    list-style-position: outside;
+    margin: 10px 0px 0px 0px;
+    padding: 0px;
+    font-size: $font-size-base;
+    .my-data-item {
+      border: $border-stroke;
+      border-color: $light-border-color;
+      .card-footer {
+        background-color: $form-bg;
+        color: $brand-dark-gray;
+      }
+    }
+    .row {
+      margin: 10px auto;
+    }
+    label {
+        font-weight: normal;
+        display: inline;
+    }
+
+    input[type="checkbox"] {
+        margin-right: 5px;
+    }
+    .note-type {
+        text-transform: uppercase;
+        font-size: $font-size-espresso;
+        color: $list-item;
+    }
+    .mods {
+        display: inline-block;
+        margin-top: 5px;
+        margin-right: 5px;
+        font-size: $font-size-espresso;
+        padding: 3px 4px;
+        border: 1px solid $midrange-border-color;
+    }
+    .status-alert {
+      font-size: $font-size-base;
+      margin-top: 10px;
+    }
+    .favorite-desc {
+      font-size: $font-size-base;
+      line-height: ceil(($font-size-base * 1.125));
+    }
+  }
+  .btn {
+    box-shadow: $box-shadow-present;
+  }
+
+  #favorite-sort {
+    border-top: 1px solid $midrange-border-color;
+    padding-top: 10px;
+    margin-right: 1px;
+    input {
+      width:100%;
+      border: $border-stroke;
+      border-color: $input-border;
+      background-color: $input-bg;
+    }
+  }
+
+  .favorite-controls {
+    position:absolute;
+    right:0px;
+  }
+
+  .favorite-control {
+    border: 1px solid $link-color;
+    color:$link-color;
+    padding: 2px 3px 0px 3px;
+    margin: 10px 15px 10px 10px;
+    cursor:pointer;
+    &:focus{
+      outline-color: $link-color;
+    }
+  }
+
+  .nav-tabs {
+  border-bottom: 1px solid $midrange-border-color;
+
+  a {
+      background-color: $btn-primary-bg;
+      color: $btn-primary-color;
+      border-radius: $border-radius-base;
+      border: 1px solid $btn-primary-bg;
+      &:hover {
+        background-color: $link-hover-color;
+        color: $btn-primary-color;
+        border: 1px solid $btn-primary-bg;
+        padding-top: 10px;
+        text-decoration: underline;
+      }
+    }
+    li.active a {
+      background-color: $body-bg;
+      color: $text-color;
+      border: 1px solid $midrange-border-color;
+      border-bottom: 1px solid transparent;
+      &:hover {
+        color: $text-color;
+        padding-top: 10px;
+        text-decoration: none;
+      }
+      &:focus {
+        text-decoration: none;
+      }
+    }
+    li.active > a {
+      color: $text-color;
+      &:hover {
+        padding-top: 10px;
+      }
+    }
+  }
+
+}
+#my-data-tab-fake {
+  font-size: 23px;
+  margin-right: 20px;
+}

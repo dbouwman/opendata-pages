@@ -1,0 +1,20 @@
+#geohash-legend {
+  position: absolute;
+  z-index: 10;
+  top: 55px;
+  right: 15px;
+  background: $panel-bg;
+  padding: 5px;
+  font-size: $font-size-tall;
+  .geohash-legend-text {
+    float:left;
+    margin-right:10px;
+  }
+  .geohash-legend-item {
+    width:50px;
+    height:10px;
+    margin-top:7px;
+    float:left;
+    margin-right:5px;
+  }
+}

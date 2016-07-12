@@ -1,0 +1,68 @@
+/**
+ * calcite-bootstrap-expansion.scss
+ *
+ * Additional calcuations needed for calcite-bootstrap
+ * NOTE: All variables defined in this file must have defaults so that the sass will compile if no variables are supplied
+ */
+
+ /**
+  * Import a set of color contrast functions
+  */
+ @import '../mixins/contrast';
+
+ // ┌────────────────┐
+ // │ Navbar: Custom │
+ // └────────────────┘
+
+ //Add a rule and color transition to the top of navbar nav links
+.navbar-nav {
+   > li {
+     > a {
+       &:hover,
+       &:focus {
+         background-image: linear-gradient(to top, transparent 92%, $brand-secondary 93%, $brand-secondary 100%);
+         transition: color 150ms linear, text-decoration 150ms linear;
+         outline: 0px !important; //necessary override because of 2 importants on links in the previous extension
+       }
+       @media (max-width: 767px) {
+         &:hover,
+         &:focus,
+         &:active {
+           background-image: none;
+         }
+       }
+     }
+   }
+ }
+
+
+ // Footer CSS
+ html {
+   position: relative;
+   min-height: 100%;
+ }
+
+ body {
+   //padding-top: ($navbar-height + 15px); /*KS: throws off the position of the jumbotron */
+   @if $flags-iframeheader {
+     padding-top: 0;
+   }
+   @else {
+     padding-top: $navbar-height;
+   }
+
+   margin-bottom: ($footer-height + 20px);
+ }
+ .footer {
+   position: absolute;
+   bottom: 0;
+   width: 100%;
+   /* Set the fixed height of the footer here */
+   height: $footer-height;
+   background-color: $footer-bg;
+   color: $footer-text-color;
+ }
+ /* This centers the text vertically in the footer */
+ .container .text-muted, .container-fluid .text-muted, ul, p {
+   margin: 18px 0;
+ }

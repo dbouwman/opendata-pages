@@ -1,0 +1,92 @@
+#download-activity-header {
+  margin-top:10px;
+}
+#download-activity {
+  list-style: none;
+  padding-left: 0px;
+  margin-top: 20px;
+  li {
+    border: 1px solid $light-border-color;
+    background-color: $body-bg;
+    margin-bottom:15px;
+    .download-title {
+      padding-top:5px;
+      margin-bottom:5px;
+      .type-icon {
+        text-align: center;
+        margin-top: 10px;
+      }
+      .glyphicon-download-alt {
+        color: $icon-color;
+        font-size: $font-size-h1;
+        display: inline-block;
+        vertical-align: middle;
+        height: 28px;
+        width: 60px;
+      }
+    }
+    .downloaded-filtered {
+      float:right;
+      font-size: $font-size-tall;
+    }
+    .downloaded-time {
+      float:left;
+      font-size: $font-size-tall;
+    }
+    .title-name-container {
+      border-left:1px solid $midrange-border-color;
+      display: table-cell;
+      vertical-align: top; 
+    }
+    .download-type {
+      font-size: $font-size-tall;
+    }
+    .download-title-link {
+      display: inline-block;
+      font-size: $font-size-base;
+      line-height: ceil(($font-size-base * 1.125));
+    }
+    .progress-container {
+      background: $light-border-color;
+      overflow: hidden;
+      color: $brand-dark-gray;
+    }
+    .progress {
+      margin-bottom:0px;
+      background-color: $panel-bg;
+      height:12px;
+      .progress-bar {
+        font-size: $font-size-espresso;
+        line-height: $font-size-base;
+        background-color: $link-color;
+      }
+    }
+    .card-footer {
+      background-color: $brand-gray;
+      div {
+        margin: 3px 5px 5px 5px;
+      }
+    }
+  }
+}
+
+/* Downloads Page View*/
+#downloads-page-tab #download-activity li {
+  .col-xs-3 {
+    display: none;
+  }
+  .title-name-container {
+    border: 0px;
+    padding-left: 30px;
+    margin-bottom: 0px;
+    font-size: ceil(($font-size-base * 1.125));
+  }
+  .card-footer div {
+    margin-left: 15px;
+    margin-right: 15px;
+  }
+  .download-type {
+    border-left: 0px;
+    padding-left: 0px;
+  }
+}

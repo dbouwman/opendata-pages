@@ -1,0 +1,81 @@
+//== Page: Umbrella Home
+//== Component: Noteworthy Data
+
+.featurette-note {
+  margin: 30px auto;
+  padding: 40px auto;
+
+  h2 {
+    color: lighten($text-color, 100%);
+    //color: $text-color;
+  }
+  h3 {
+    text-align: center;
+    margin-top: 15px;
+    margin-bottom: 10px;
+    color: $link-color;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    font-size: 20px;
+    &:hover, :active {
+      color: $link-hover-color !important;
+    }
+    &:focus {
+      color: $link-hover-color;
+    }
+  }
+
+  .panel-default {
+    min-height: 318px;
+    border-bottom: 1px solid $midrange-border-color;
+    padding: 15px;
+
+    .panel-heading {
+      background-color: $panel-bg;
+      height: 110px;
+      padding: 0px auto !important;
+      img {
+        margin: 0 auto;
+        max-height: 47px;
+      }
+    }
+
+    .panel-body {
+      padding: 0 0 20px 0;
+      position:relative;
+      h4 {
+        overflow: hidden;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+        font-size: 18px;
+      }
+      p {
+        height: 64px;
+        overflow: hidden;
+      }
+      .text-fade {
+        width: 100%;
+        height: 52px;
+        position: absolute;
+        bottom: 20px;
+        box-shadow: inset 0px -50px 34px -25px $panel-bg;
+      }
+    }
+
+    .panel-footer {
+      background-color: $panel-bg;
+      padding: 0px;
+      border: 0px;
+      .plain-date {
+        display: inline-block;
+        background-color: $panel-footer-bg;
+        vertical-align: middle;
+        padding: 7px;
+      }
+    }
+  }
+  .btn {
+    box-shadow: $box-shadow-present;
+  }
+}

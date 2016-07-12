@@ -1,0 +1,97 @@
+//== Page: Dataset
+//== Component: Dataset Page
+//== Description: Larger wrapper around all Overview and Data contents
+
+.page-datasets {
+  min-height: 25px;
+
+    .group-thumb {
+      height:48px;
+      width:48px;
+      margin-right:8px;
+    }
+
+    /*.over-map-tabs > li > a:hover,
+    .over-map-tabs > li.active > a {
+      border: 1px solid transparent;
+    }
+    .over-map-tabs > li > a:hover {
+      padding-top: 10px;
+    }*/
+
+  .hideMap .map-container .esri-map-component {
+    display: none;
+    border-bottom: 0px;
+  }
+  .map-placeholder {
+    height: 33px;
+  }
+
+  .map-container {
+      border-bottom: 1px solid $midrange-border-color;
+  }
+  .hideMap .map-container {
+      border-bottom: 0px;
+  }
+  .over-map-tabs {
+    margin-top: -41px;
+    a {
+      background-color: $btn-primary-bg;
+      color: $btn-primary-color;
+      border-radius: $border-radius-base;
+      border: 1px solid $btn-primary-bg;
+      &:hover,
+      &:focus {
+        background-color: $link-hover-color;
+        color:$btn-primary-color;
+        text-decoration: underline;
+        border: 1px solid transparent;
+        padding-top: 10px;
+      }
+    }
+    a.active {
+      background: $body-bg;
+      color: $text-color;
+      opacity: 1.0;
+      border-bottom: 1px solid transparent;
+      &:hover {
+        background-color: $body-bg;
+        color: $text-color;
+        text-decoration: none;
+        padding-top: 10px;
+      }
+      &:focus {
+        text-decoration: none;
+      }
+    }
+    a:focus {
+      background-color:$body-bg !important;
+      color:$text-color !important;
+    }
+  }
+  .hideMap {
+    padding-top: 20px;
+    .over-map-tabs {
+      margin-top:-35px;
+      a.active {
+        background: $body-bg;
+      }
+    }
+  }
+  .related-connected-tabs {
+    margin-bottom: 25px;
+  }
+  h2 {
+    padding-bottom: $h2-btm-padding;
+    border-bottom: $h2-btm-border;
+  }
+  h3 {
+    padding-bottom: $h3-btm-padding;
+    border-bottom: $h3-btm-border;
+  }
+
+}
+
+.btn .caret {
+  margin-top: 0px;
+}

@@ -1,0 +1,61 @@
+//== Page: Search 
+//== Component: Facets Sidebar
+//== Description: Area containing the list of filtes and facets on search results page
+
+#sidebar-left {
+  h2 {
+    margin-top: 23px;
+    //padding-bottom: $h2-btm-padding;
+    //border-bottom: $h2-btm-border;
+  }
+  box-sizing: border-box;
+  #filter-search-results {
+    overflow-x: hidden;
+    .checkbox label {
+      display: block;
+      padding-left: 0px;
+      width: 100%;
+      margin: 5px auto;
+      color: $link-color;
+      span {
+        font-weight: bold;
+      }
+      &:hover {
+        color: $link-hover-color;
+      }
+    }
+    .checkbox input[type="checkbox"]{
+      display: none;
+    }
+    .filter-type-group {
+      .checkbox label {
+        padding-left: 20px;
+      }
+      .checkbox input[type="checkbox"] {
+      display: inline;
+      }
+    }
+    label.selected-checkbox {
+      background-color: lighten($link-color, 52%);
+      border-left-color: darken($link-color, 10%);
+      border-left-style: solid;
+      border-left-width: 5px;
+      width: 100%;
+      padding: 5px;
+      padding-left: 5px !important;
+      color: darken($text-color,100%);
+      font-weight: normal;
+      input[type="checkbox"] {
+          display: none !important;
+        }
+    }
+    input {
+      margin-top: 5px;
+    }
+    .filter-headings {
+      border-top: 1px solid $midrange-border-color;
+      padding-top: 8px;
+      width: 100%;
+    }
+  }
+}

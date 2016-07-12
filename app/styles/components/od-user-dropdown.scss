@@ -1,0 +1,22 @@
+.od-user-dropdown-component {
+  .dropdown-menu {
+  margin-top: 0px;
+  padding-top: 0px;
+  }
+
+  a:hover,
+  .btn-link:hover,
+  .btn-link:focus {
+    text-decoration: none;
+  }
+  button {
+    padding: 0;
+    span {
+    color: $navbar-default-link-color;
+      &:hover, &:focus {
+      	text-decoration: none;
+      	color: $navbar-default-link-hover-color;
+	  }
+	}
+  }
+}

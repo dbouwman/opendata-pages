@@ -1,0 +1,153 @@
+.agol-signup {
+  .modal-header {
+    border-bottom: none !important;
+  }
+  .agol-signup-footer {
+    text-align:center;
+    button {
+      margin-bottom:30px;
+    }
+  }
+  .agol-signup-text {
+    font-size:0.8em;
+  }
+  .no-account-prompt {
+    margin-bottom:20px;
+  }
+  .modal-body {
+    font-family:  $font-family-sans-serif;
+    padding: 10px 40px 80px 40px;
+    height: 800px;
+    .control-label {
+      font-weight: bold;
+    }
+    ul {
+      margin-top: 1em;
+      padding: 15px;
+      li {
+        padding-left: 0px;
+        margin: 0 0 10px;
+        font-size: 1em;
+        line-height: 1.4em;
+        font-weight: 400;
+      }
+    }
+    h2 {
+      font-size: $font-size-h2;
+      font-weight: 500;
+      letter-spacing: 0.02em;
+      line-height: ($font-size-h2 * 1.2);
+      margin-bottom: .4em;
+      text-transform: none;
+      margin-top:0px;
+    }
+    .feature-list {
+      margin-top: 2.5em;
+      padding: 0px;
+      li {
+        background: url("images/bluebullet.png") no-repeat left 12px;
+        padding-left: 10px;
+        list-style: none;
+        margin: 0 0 10px 0;
+        font-size: $font-size-base;
+        line-height: $font-size-grande;
+        font-weight: 500;
+      }
+    }
+    .signin-button {
+      text-transform: capitalize;
+    }
+    .help-block, label {
+      text-align: left;
+    }
+  }
+  .cardd {
+    position: relative;
+    display: block;
+    width: auto;
+    height: auto;
+    padding: 20px;
+    margin: 2em auto;
+    margin-top: 18px;
+    -webkit-transform-style: preserve-3d;
+    transform-style: preserve-3d;
+
+    -webkit-transform: perspective(1000px) rotatey(0);
+    transform: perspective(1000px) rotatey(0);
+
+    -webkit-transition: .3s transform;
+    transition: .3s transform;
+
+    &.flip-trans {
+      -webkit-transform: rotatey(180deg);
+      transform: rotatey(180deg);
+    }
+
+    .side-a,
+    .side-b {
+      position: absolute;
+      padding: 1rem 1.25rem;
+      width: 100%;
+      color: #666;
+      background-color: $panel-bg;
+      border: 1px solid $midrange-border-color;
+      border-radius: .375rem;
+      -webkit-backface-visibility: hidden;
+      backface-visibility: hidden;
+
+      -webkit-transform-style: preserve-3d;
+      transform-style: preserve-3d;
+      h3 {
+        margin-top: 5px;
+      }
+    }
+    .side-a {
+      .checkbox.sr-only {
+        min-height: inherit;
+        margin: 0;
+      }
+    }
+
+    .side-b {
+      -webkit-transform: rotatey(180deg);
+      transform: rotatey(180deg);
+      z-index: 0;
+    }
+    .terms {
+      overflow-y: auto;
+    }
+  }
+  &.is-ie {
+    .cardd {
+      transform: none;
+      transition: none;
+      .side-a {
+        display: block;
+        z-index: 9999;
+      }
+      .side-b {
+        display: none;
+        transform: none;
+        z-index: 0;
+      }
+      &.flip-trans {
+        transform: none;
+        .side-a {
+          display: none;
+          z-index: 0;
+        }
+        .side-b {
+          display: block;
+          z-index: 9999;
+        }
+      }
+    }
+  }
+}
+
+/* CSS fix for the modal's horizontal spacing; we show the scroll on the modals, the body scrolls is hidden automatically by Bootstrap */
+.modal-open .modal.agol-signup {
+  padding-left: 0px !important;
+  padding-right: 0px !important;
+  overflow-y: scroll;
+}

@@ -1,0 +1,7 @@
+@import "-autocomplete-base";
+
+.tt-suggestion.tt-selectable {
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}

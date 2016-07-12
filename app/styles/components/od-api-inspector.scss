@@ -1,0 +1,92 @@
+/* API Inspector - Geoservices */
+.api-inspector {
+	.no-gutter > [class*='col-'] {
+    padding-right:0;
+    padding-left:0;
+	}
+	.panel {
+		margin-bottom: 5px;
+	}
+	.row {
+		margin: 10px auto;
+		background-color: $table-bg;
+		color: $table-color;
+	}
+	.panel-heading {
+	  	background-color: $btn-primary-bg;
+		color: $btn-primary-color;
+		&:hover{
+ 		 color: $btn-primary-color;
+ 		}
+
+	}
+	span {
+		font-size: $font-size-tall;
+	}
+	.help-block {
+		color: $text-color;
+	}
+	#where-selector {
+		.btn {
+			font-size: $font-size-base;
+			text-align:center;
+		}
+		.form-group {
+			height: 34px;
+			background-color: $body-bg;
+			box-shadow: inset 0 1px 1px rgba($sidebar-shadow, 0.075);
+			width: 60%;
+		}
+		.form-group:focus {
+			border-color: $link-color;
+    		outline: 0;
+    		-webkit-box-shadow: inset 0 1px 1px rgba($sidebar-shadow, 0.075), 0 0 8px rgba($link-color, 0.6);
+    		box-shadow: inset 0 1px 1px rgba($sidebar-shadow, 0.075), 0 0 8px rgba($link-color, 0.6);
+		}
+		.query-range {
+			width: 15%;
+		}
+		.expression-dropdown {
+			width: 40%;
+			border-radius: $border-radius-base;
+		}
+		.parallel-input {
+			width: 60%;
+			border-radius: $border-radius-base;
+		}
+		.add-clause {
+			margin-right: 1px;
+		}
+		.clause-instructions {
+			padding-left: 10px;
+			label {
+				font-weight: normal;
+			}
+		}
+	}
+	input {
+		border: $border-stroke;
+		border-color: $input-border;
+	}
+	button {
+	    box-shadow: $box-shadow-present
+	}
+	.api-action-btns {
+		margin: 0px auto 5px auto;
+	}
+	.json-output {
+		max-height: 400px;
+		margin-bottom: 0px;
+	}
+}
+.geoservice-query-url {
+    top: ($navbar-height + 10px);
+    a {
+    	color: darken($link-color, 100%);
+    }
+
+    pre { 
+    max-width: 360px;
+    white-space: pre-wrap;
+    }
+  }

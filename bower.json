@@ -1,9 +1,18 @@
 {
   "name": "opendata-pages",
   "dependencies": {
+      "blueimp-md5": "1.1.1",
+    "bootstrap-sass": "bootstrap-sass-official#~3.3.5",
     "ember": "~2.5.0",
     "ember-cli-shims": "0.1.1",
     "ember-cli-test-loader": "0.2.2",
-    "ember-qunit-notifications": "0.1.0"
+    "ember-qunit-notifications": "0.1.0",
+    "sanitize.js": "^1.0.0",
+    "bootstrap-drawer": "~1.0.4",
+    "moment": "~2.11.2",
+    "typeahead.js": "https://github.com/corejavascript/typeahead.js.git#b46224c62c67d92b302d4f8847ccea042dff3a0f",
+    "mjolnic-bootstrap-colorpicker": "~2.3.0",
+    "bootstrap-daterangepicker": "~2.1.18",
+    "marked": "0.3.5"
   }
 }

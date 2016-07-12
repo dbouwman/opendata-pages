@@ -1,0 +1,57 @@
+//== Page: Dataset 
+//== Component: Dataset Header
+//== Description: Area at the top of the dataset overview that contains the dataset name and action buttons
+
+.dataset-header{
+  h2 {
+    @media (max-width:1199px) {
+      margin-bottom: 5px;
+    }
+  }
+  span {
+    margin-top:10px;
+    margin-left:10px;
+    @media (max-width:1199px) {
+      margin: 0px;
+    }
+  }
+  #download-container {
+    margin-top:5px;
+
+    .alignment {
+      float: right;
+      @media (max-width:1199px) {
+        float: left;
+      }
+    }
+    button {
+      margin-bottom: 10px;
+      box-shadow: $box-shadow-present;
+    }
+    button:focus {
+      outline: 1px solid $input-border-focus;
+    }
+
+    .dropdown-menu {
+    border: $border-stroke;
+    border-color: $midrange-border-color;
+    padding-top: 0px;
+      li {
+        padding: 5px;
+      }
+      li > a {
+        padding: 3px 5px;
+      }
+    }
+  }
+
+  #favorite-button {
+    .btn .caret {
+          margin-top: 0px;
+    }
+    &:focus {
+      color: $btn-background-hover;
+    }
+  }
+
+}

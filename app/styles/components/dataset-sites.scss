@@ -1,0 +1,14 @@
+.dataset-sites {
+  .site-list {
+    list-style:none;
+    padding:0;
+    margin:0;
+    li {
+      padding-bottom: 10px;
+    }
+    .glyphicon {
+      top: 2px;
+      color: $link-color;
+    }
+  }
+}
