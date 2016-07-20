@@ -17,6 +17,26 @@ export default Ember.Service.extend({
   },
 
   /**
+   * Search for all page-template items
+   */
+  getPageTemplates(num=100, start=1){
+    let form = {
+      q:'tags:page-template AND type:Web Mapping Application',
+      sortField:'title',
+      num:num,
+      start:start
+    }
+    return this.get('itemsService').search(form);
+  },
+
+  getPageTemplate(id){
+    return Ember.RSVP.hash({
+      item: this.get('itemsService').getById(id),
+      data: this.get('itemsService').getDataById(id)
+    });
+  },
+
+  /**
    * Return the /data
    */
   getPage(id){
