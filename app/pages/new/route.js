@@ -17,37 +17,38 @@ export default Ember.Route.extend({
    * then save it and transitionTo the edit route
    */
   model(){
-    let currentUser = this.get('session.currentUser');
-    let portal = this.get('session.portal');
-    let props = {
-      title:'New Page',
-      public:false,
-      uiVersion:2,
-      owner: currentUser.username,
-      ownerName: currentUser.fullName,
-      updatedAt: new Date().toISOString(),
-      affiliation: portal.name,
-      sections:[
-        {
-          'containment': 'fixed',
-          'isFooter': false,
-          'style': {
-            'background': {
-              'color': 'transparent'
-            },
-            'color': '#000000'
-          },
-          'rows': []
-        }
-      ]
-    };
-
-    this.get('pagesService').create(props)
-      .then((resp)=>{
-        this.transitionTo('pages.page.edit', resp.id);
-      })
-      .catch((err)=>{
-        console.error('Error saving page to AGO api: ' + JSON.stringify(err));
-      });
+    return this.get('pagesService').getPageTemplates();
+    // let currentUser = this.get('session.currentUser');
+    // let portal = this.get('session.portal');
+    // let props = {
+    //   title:'New Page',
+    //   public:false,
+    //   uiVersion:2,
+    //   owner: currentUser.username,
+    //   ownerName: currentUser.fullName,
+    //   updatedAt: new Date().toISOString(),
+    //   affiliation: portal.name,
+    //   sections:[
+    //     {
+    //       'containment': 'fixed',
+    //       'isFooter': false,
+    //       'style': {
+    //         'background': {
+    //           'color': 'transparent'
+    //         },
+    //         'color': '#000000'
+    //       },
+    //       'rows': []
+    //     }
+    //   ]
+    // };
+    //
+    // this.get('pagesService').create(props)
+    //   .then((resp)=>{
+    //     this.transitionTo('pages.page.edit', resp.id);
+    //   })
+    //   .catch((err)=>{
+    //     console.error('Error saving page to AGO api: ' + JSON.stringify(err));
+    //   });
   }
 });
