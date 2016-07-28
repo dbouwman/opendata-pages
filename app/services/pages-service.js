@@ -8,7 +8,7 @@ export default Ember.Service.extend({
    */
   getUserPages(username, num=100, start=1){
     let form = {
-      q:'owner:' + username + ' AND tags:odpage AND type:Web Mapping Application',
+      q:'owner:' + username + ' AND tags:hubpage AND type:Web Mapping Application',
       sortField:'title',
       num:num,
       start:start
@@ -21,7 +21,7 @@ export default Ember.Service.extend({
    */
   getPageTemplates(num=100, start=1){
     let form = {
-      q:'tags:page-template AND type:Web Mapping Application',
+      q:'tags:hubpagetemplate AND type:Web Mapping Application',
       sortField:'title',
       num:num,
       start:start
@@ -67,7 +67,7 @@ export default Ember.Service.extend({
         'selfConfigured',
         'Code Sample'
       ],
-      'tags':['odpage'],
+      'tags':['hubpage'],
       'text': JSON.stringify(data)
     };
 
