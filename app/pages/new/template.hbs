@@ -17,4 +17,9 @@
     </div>
     {{/each}}
   </div>
+  {{#if isWorking}}
+    <div class="alert alert-success" role="alert">
+      <strong>Working:</strong>{{msg}}
+    </div>
+  {{/if}}
 </div>

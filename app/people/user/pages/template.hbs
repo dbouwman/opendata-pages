@@ -16,7 +16,7 @@
           <tr>
             <th>{{t 'pages.list.headers.name'}}</th>
             <th>{{t 'pages.list.headers.status'}}</th>
-            <th>{{t 'pages.list.headers.updated'}}</th>
+            <th>Owner</th>
             <th></th>
           </tr>
         </thead>
@@ -31,7 +31,7 @@
                 {{t 'pages.list.values.private'}}
               {{/if}}
               </td>
-              <td>{{page.updatedAt}}</td>
+              <td>{{page.owner}}</td>
               <td>
                 {{#if (eq model.user.username page.owner) }}
                 {{#link-to 'pages.page.edit' page.id class="btn btn-default btn-sm pull-right" data-toggle="tooltip" data-placement="top" title="Edit Page" arial-label="Edit Page"}}{{t 'shared.buttons.edit'}}{{/link-to}}
